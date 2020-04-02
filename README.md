@@ -1,0 +1,2 @@
+# MWT
+ Minimum Weight Triangulation
