@@ -1,0 +1,68 @@
+# depslib dependency file v1.0
+1570054622 source:c:\users\ahmed\codeblocksprojects\mwt\src\point.cpp
+	"Point.h"
+
+1586293940 c:\users\ahmed\codeblocksprojects\mwt\include\point.h
+
+1570068605 source:c:\users\ahmed\codeblocksprojects\mwt\src\brin.cpp
+	"Brin.h"
+
+1570066581 c:\users\ahmed\codeblocksprojects\mwt\include\brin.h
+	"Sommet.h"
+	"Point.h"
+
+1570919144 c:\users\ahmed\codeblocksprojects\mwt\include\sommet.h
+	"Point.h"
+
+1570919143 source:c:\users\ahmed\codeblocksprojects\mwt\src\sommet.cpp
+	"Sommet.h"
+
+1570054754 source:c:\users\ahmed\codeblocksprojects\mwt\src\wingbi.cpp
+	<windows.h>
+	<stddef.h>
+	<stdio.h>
+	<math.h>
+	"graphics.h"
+
+1570054868 c:\users\ahmed\codeblocksprojects\mwt\include\graphics.h
+
+1586289969 source:c:\users\ahmed\codeblocksprojects\mwt\main.cpp
+	<iostream>
+	"Rng.h"
+	"Mwt.h"
+	"vector"
+	"Carte.h"
+	"graphics.h"
+	<bits/stdc++.h>
+
+1586222493 c:\users\ahmed\codeblocksprojects\mwt\include\rng.h
+	<vector>
+	<Carte.h>
+	<Point.h>
+	<math.h>
+
+1586227348 source:c:\users\ahmed\codeblocksprojects\mwt\src\rng.cpp
+	<iostream>
+	"Rng.h"
+	"Carte.h"
+	"graphics.h"
+
+1571213633 source:c:\users\ahmed\codeblocksprojects\mwt\src\carte.cpp
+	"Carte.h"
+	<iostream>
+
+1571213169 c:\users\ahmed\codeblocksprojects\mwt\include\carte.h
+	"Brin.h"
+	"Point.h"
+	<vector>
+
+1586289754 source:c:\users\ahmed\codeblocksprojects\mwt\src\mwt.cpp
+	<iostream>
+	"Mwt.h"
+	<vector>
+
+1586238424 c:\users\ahmed\codeblocksprojects\mwt\include\mwt.h
+	"Point.h"
+	<Carte.h>
+	<vector>
+
