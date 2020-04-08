@@ -43,6 +43,7 @@ int main()
     points.push_back(p8);
     points.push_back(p9);
 
+
 // int n=50;
 //    for(int i(0);i<n;i++)
 //    {
@@ -56,15 +57,13 @@ int main()
     Rng rng;
     Carte c = rng.DrawRng(points);
     trace(c);
-    setcolor(BLUE);
-    circle(p3.getX(),p3.getY(),3);
-    circle(p7.getX(),p7.getY(),3);
     Mwt mwt;
     mwt.setPoints(points);
-    std::vector<Point> feasible= mwt.FeasiblePoints(p1,c);
+    std::vector<Point> feasible= mwt.FeasiblePoints(p9,c);
     for(int i=0;i<feasible.size();i++)
     {
-        cout << feasible[i].getX() << " " << feasible[i].getY() << endl;
+        setcolor(BLUE);
+        circle(feasible[i].getX(),feasible[i].getY(),3);
     }
     getch();
     closegraph();

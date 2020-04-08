@@ -10,7 +10,7 @@ class Mwt
         Mwt();
         virtual ~Mwt();
         std::vector<Point> FeasiblePoints(Point i,Carte c);
-        bool aGauche(Point p1, Point p2, Point newPt);
+        int aGauche(Point p1, Point p2, Point newPt);
         std::vector<Point> getPoints() const;
         void setPoints(std::vector<Point> p);
 

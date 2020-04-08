@@ -2,7 +2,7 @@
 1570054622 source:c:\users\ahmed\codeblocksprojects\mwt\src\point.cpp
 	"Point.h"
 
-1586293940 c:\users\ahmed\codeblocksprojects\mwt\include\point.h
+1586370631 c:\users\ahmed\codeblocksprojects\mwt\include\point.h
 
 1570068605 source:c:\users\ahmed\codeblocksprojects\mwt\src\brin.cpp
 	"Brin.h"
@@ -26,7 +26,7 @@
 
 1570054868 c:\users\ahmed\codeblocksprojects\mwt\include\graphics.h
 
-1586289969 source:c:\users\ahmed\codeblocksprojects\mwt\main.cpp
+1586373694 source:c:\users\ahmed\codeblocksprojects\mwt\main.cpp
 	<iostream>
 	"Rng.h"
 	"Mwt.h"
@@ -56,12 +56,12 @@
 	"Point.h"
 	<vector>
 
-1586289754 source:c:\users\ahmed\codeblocksprojects\mwt\src\mwt.cpp
+1586373190 source:c:\users\ahmed\codeblocksprojects\mwt\src\mwt.cpp
 	<iostream>
 	"Mwt.h"
 	<vector>
 
-1586238424 c:\users\ahmed\codeblocksprojects\mwt\include\mwt.h
+1586369072 c:\users\ahmed\codeblocksprojects\mwt\include\mwt.h
 	"Point.h"
 	<Carte.h>
 	<vector>
