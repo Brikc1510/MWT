@@ -84,3 +84,48 @@ std::vector<Point> Mwt::FeasiblePoints(Point i,Carte c)
     return feasible;
 
 }
+
+Point Mwt::SelectPoint(std::vector<Point> p,Carte c,int i)
+{
+    Point selectedPoint;
+    int s;
+    switch(i)
+    {
+        case 1:
+            do
+            {
+                srand(time(NULL));
+                 s=rand() % p.size();
+            }while(FeasiblePoints(p[s],c).size()==0);
+            selectedPoint=p[s];
+            break;
+        case 2:
+            s=0;
+            for(int j =0;j<p.size();j++)
+            {
+                if(FeasiblePoints(p[j],c).size()>s)
+                {
+                    s=FeasiblePoints(p[j],c).size();
+                    selectedPoint=p[j];
+                }
+            }
+            break;
+        case 3:
+
+            s=100;
+            for(int j =0;j<p.size();j++)
+            {
+                if(FeasiblePoints(p[j],c).size()<s && FeasiblePoints(p[j],c).size()!=0)
+                {
+                    s=FeasiblePoints(p[j],c).size();
+                    selectedPoint=p[j];
+                }
+            }
+            break;
+
+    }
+    return selectedPoint;
+
+
+}
+

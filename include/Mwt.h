@@ -14,6 +14,7 @@ class Mwt
         std::vector<Point> getPoints() const;
         void setPoints(std::vector<Point> p);
         Point SelectInitialPoint(std::vector<Point> p);
+        Point SelectPoint(std::vector<Point> p,Carte c,int i);
 
 
 

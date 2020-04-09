@@ -60,11 +60,24 @@ int main()
     trace(c);
     Mwt mwt;
     mwt.setPoints(points);
-    //Séléction du point initial,il sera colorier en vert
+    //Séléction du point initial aléatoirement,il sera colorier en vert
     Point pInitial=mwt.SelectInitialPoint(points);
+
+    std::vector<Point> feasible= mwt.FeasiblePoints(pInitial,c);
+    if(feasible.size()==0)
+    {
+        //Si le point choisi n'a aucun point réalisable alors on le change
+        //Le troisième paramètre est le critère de choix
+        //1 pour un choix aléatoire 2 pour choisir le point avec le plus de points réalisables
+        //3 pour choisir le point avec le moins de points réalisables
+        pInitial=mwt.SelectPoint(points,c,1);
+        std::vector<Point> feasible= mwt.FeasiblePoints(pInitial,c);
+
+    }
+
     setcolor(GREEN);
     circle(pInitial.getX(),pInitial.getY(),3);
-    std::vector<Point> feasible= mwt.FeasiblePoints(pInitial,c);
+
     //Les point réalisables du point initial,ils seront colorier en bleu
     for(int i=0;i<feasible.size();i++)
     {
