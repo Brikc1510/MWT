@@ -13,6 +13,7 @@ class Mwt
         int aGauche(Point p1, Point p2, Point newPt);
         std::vector<Point> getPoints() const;
         void setPoints(std::vector<Point> p);
+        Point SelectInitialPoint(std::vector<Point> p);
 
 
 

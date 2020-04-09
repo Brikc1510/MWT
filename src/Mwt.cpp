@@ -1,4 +1,6 @@
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 #include "Mwt.h"
 #include <vector>
 
@@ -34,6 +36,14 @@ int Mwt::aGauche(Point p1, Point p2, Point newPt)
 
 
 }
+Point Mwt::SelectInitialPoint(std::vector<Point> p)
+{
+    srand(time(NULL));
+    int r =rand() % p.size();
+    return p[r];
+}
+
+
 std::vector<Point> Mwt::FeasiblePoints(Point i,Carte c)
 {
     std::vector<Point> feasible;

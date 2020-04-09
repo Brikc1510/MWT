@@ -55,11 +55,17 @@ int main()
     opengraphsize(1200 ,1200);
 
     Rng rng;
+    //Création du graphe de voisinage relative
     Carte c = rng.DrawRng(points);
     trace(c);
     Mwt mwt;
     mwt.setPoints(points);
-    std::vector<Point> feasible= mwt.FeasiblePoints(p9,c);
+    //Séléction du point initial,il sera colorier en vert
+    Point pInitial=mwt.SelectInitialPoint(points);
+    setcolor(GREEN);
+    circle(pInitial.getX(),pInitial.getY(),3);
+    std::vector<Point> feasible= mwt.FeasiblePoints(pInitial,c);
+    //Les point réalisables du point initial,ils seront colorier en bleu
     for(int i=0;i<feasible.size();i++)
     {
         setcolor(BLUE);
