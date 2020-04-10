@@ -21,6 +21,11 @@ void Mwt::setPoints(std::vector<Point> p)
 {
     points=p;
 }
+double Mwt::Distance(Point p,Point p1)
+{
+    double distance = sqrt((p1.getX()-p.getX())*(p1.getX()-p.getX())+(p1.getY()-p.getY())*((p1.getY()-p.getY())));
+    return distance;
+}
 
 int Mwt::aGauche(Point p1, Point p2, Point newPt)
 {
@@ -126,6 +131,23 @@ Point Mwt::SelectPoint(std::vector<Point> p,Carte c,int i)
     }
     return selectedPoint;
 
+}
 
+Point Mwt::SelectPointProb(std::vector<Point> p,Point i)
+{
+    std::vector<double> c;
+    double distance,pij,somme=0;
+    for(int k=0;k<p.size();k++)
+    {
+        somme+=pow(0.5,1)*pow(1/Distance(i,p[k]),5);
+    }
+    for(int j=0;j<p.size();j++)
+    {
+        distance= Distance(i,p[j]);
+        std::cout << distance << std::endl;
+        pij =(pow(0.5,1)*pow(1/Distance(i,p[j]),5))/somme;
+        std::cout << pij<< std::endl;
+        c.push_back(pij);
+    }
 }
 

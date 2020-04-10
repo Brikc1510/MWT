@@ -84,6 +84,8 @@ int main()
         setcolor(BLUE);
         circle(feasible[i].getX(),feasible[i].getY(),3);
     }
+
+    mwt.SelectPointProb(feasible,pInitial);
     getch();
     closegraph();
     return 0;
