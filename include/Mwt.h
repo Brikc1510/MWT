@@ -5,6 +5,7 @@
 #include <vector>
 #include <math.h>
 
+
 class Mwt
 {
     public:
@@ -18,6 +19,7 @@ class Mwt
         Point SelectInitialPoint(std::vector<Point> p);
         Point SelectPoint(std::vector<Point> p,Carte c,int i);
         Point SelectPointProb(std::vector<Point> p,Point i);
+        bool CompareDistance(double a,double b);
 
 
 

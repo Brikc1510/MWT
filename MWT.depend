@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1586476391 source:c:\users\ahmed\codeblocksprojects\mwt\src\point.cpp
+1586728099 source:c:\users\ahmed\codeblocksprojects\mwt\src\point.cpp
 	"Point.h"
 
-1586476366 c:\users\ahmed\codeblocksprojects\mwt\include\point.h
+1586728103 c:\users\ahmed\codeblocksprojects\mwt\include\point.h
 
 1570068605 source:c:\users\ahmed\codeblocksprojects\mwt\src\brin.cpp
 	"Brin.h"
@@ -26,7 +26,7 @@
 
 1570054868 c:\users\ahmed\codeblocksprojects\mwt\include\graphics.h
 
-1586484883 source:c:\users\ahmed\codeblocksprojects\mwt\main.cpp
+1586730997 source:c:\users\ahmed\codeblocksprojects\mwt\main.cpp
 	<iostream>
 	"Rng.h"
 	"Mwt.h"
@@ -56,14 +56,17 @@
 	"Point.h"
 	<vector>
 
-1586484996 source:c:\users\ahmed\codeblocksprojects\mwt\src\mwt.cpp
+1586732059 source:c:\users\ahmed\codeblocksprojects\mwt\src\mwt.cpp
 	<iostream>
 	<stdlib.h>
 	<time.h>
 	"Mwt.h"
+	<algorithm>
 	<vector>
+	<map>
+	<iterator>
 
-1586484856 c:\users\ahmed\codeblocksprojects\mwt\include\mwt.h
+1586727192 c:\users\ahmed\codeblocksprojects\mwt\include\mwt.h
 	"Point.h"
 	<Carte.h>
 	<vector>

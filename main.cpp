@@ -85,7 +85,8 @@ int main()
         circle(feasible[i].getX(),feasible[i].getY(),3);
     }
 
-    mwt.SelectPointProb(feasible,pInitial);
+    Point pSelected= mwt.SelectPointProb(feasible,pInitial);
+    cout << pSelected.getX() <<","<<pSelected.getY() << endl;
     getch();
     closegraph();
     return 0;

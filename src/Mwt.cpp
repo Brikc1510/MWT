@@ -2,7 +2,10 @@
 #include <stdlib.h>
 #include <time.h>
 #include "Mwt.h"
+#include <algorithm>
 #include <vector>
+#include <map>
+#include <iterator>
 
 Mwt::Mwt()
 {
@@ -38,8 +41,10 @@ int Mwt::aGauche(Point p1, Point p2, Point newPt)
         else
             return 0;
     }
-
-
+}
+bool CompareDistance(double a,double b)
+{
+    return a < b;
 }
 Point Mwt::SelectInitialPoint(std::vector<Point> p)
 {
@@ -135,19 +140,47 @@ Point Mwt::SelectPoint(std::vector<Point> p,Carte c,int i)
 
 Point Mwt::SelectPointProb(std::vector<Point> p,Point i)
 {
-    std::vector<double> c;
-    double distance,pij,somme=0;
+    std::map<double,const Point> pijAll;
+    double pij,somme=0;
     for(int k=0;k<p.size();k++)
     {
         somme+=pow(0.5,1)*pow(1/Distance(i,p[k]),5);
     }
     for(int j=0;j<p.size();j++)
     {
-        distance= Distance(i,p[j]);
-        std::cout << distance << std::endl;
         pij =(pow(0.5,1)*pow(1/Distance(i,p[j]),5))/somme;
         std::cout << pij<< std::endl;
-        c.push_back(pij);
+        pijAll.insert ( std::pair<double,const Point>(pij,p[j]));
     }
+    std::cout << "----------"<< std::endl;
+    std::map<double,const Point>::iterator it;
+    for(it=pijAll.begin();it!=pijAll.end() ; ++it)
+    {
+        Point p1= it->second ;
+        std::cout << it->first <<" ("<<p1.getX() <<" "<<p1.getY()<<")" <<std::endl;
+    }
+    std::cout << "----------"<< std::endl;
+    srand(time(NULL));
+    double r = (double) rand()/RAND_MAX;
+    std::cout << "random "<< r << std::endl;
+
+    double s=1;
+    for(it=pijAll.begin();it!=pijAll.end() ;++it)
+    {
+         std::cout << s << ">" << r << ">" << s-it->first << std::endl;
+        if(s>r && r>s-it->first)
+        {
+            Point pSelected= it->second;
+            std::cout << pSelected.getX() <<","<<pSelected.getY() << std::endl;
+            return it->second;
+        }
+        s=1-it->first;
+
+    }
+
+
+
+
+
 }
 
