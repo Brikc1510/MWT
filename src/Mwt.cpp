@@ -98,6 +98,7 @@ std::vector<Point> Mwt::FeasiblePoints(Point i,Carte c)
 Point Mwt::SelectPoint(std::vector<Point> p,Carte c,int i)
 {
     Point selectedPoint;
+    std::cout << "Coucou" << std::endl;
     int s;
     switch(i)
     {
@@ -134,6 +135,7 @@ Point Mwt::SelectPoint(std::vector<Point> p,Carte c,int i)
             break;
 
     }
+    std::cout << "SelectionPoint  (" << selectedPoint.getX() <<","<<selectedPoint.getY() <<")" << std::endl;
     return selectedPoint;
 
 }
@@ -149,10 +151,8 @@ Point Mwt::SelectPointProb(std::vector<Point> p,Point i)
     for(int j=0;j<p.size();j++)
     {
         pij =(pow(0.5,1)*pow(1/Distance(i,p[j]),5))/somme;
-        std::cout << pij<< std::endl;
         pijAll.insert ( std::pair<double,const Point>(pij,p[j]));
     }
-    std::cout << "----------"<< std::endl;
     std::map<double,const Point>::iterator it;
     for(it=pijAll.begin();it!=pijAll.end() ; ++it)
     {
@@ -171,16 +171,25 @@ Point Mwt::SelectPointProb(std::vector<Point> p,Point i)
         if(s>r && r>s-it->first)
         {
             Point pSelected= it->second;
-            std::cout << pSelected.getX() <<","<<pSelected.getY() << std::endl;
             return it->second;
         }
-        s=1-it->first;
+        s=s-it->first;
 
     }
 
+}
 
-
-
-
+bool Mwt::UpdateFeasiblePoints(Carte c,std::vector<Point> p)
+{
+    int somme=0;
+    for(int i=0;i<p.size();i++)
+    {
+        std::vector<Point> feasibles = FeasiblePoints(p[i],c);
+        somme+=feasibles.size();
+    }
+    if(somme>0)
+        return true;
+    else
+        return false;
 }
 

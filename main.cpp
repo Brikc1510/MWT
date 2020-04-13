@@ -58,35 +58,45 @@ int main()
     //Création du graphe de voisinage relative
     Carte c = rng.DrawRng(points);
     trace(c);
+    //Séléction du point initial aléatoirement,il sera colorier en vert
     Mwt mwt;
     mwt.setPoints(points);
-    //Séléction du point initial aléatoirement,il sera colorier en vert
     Point pInitial=mwt.SelectInitialPoint(points);
-
-    std::vector<Point> feasible= mwt.FeasiblePoints(pInitial,c);
-    if(feasible.size()==0)
+    std::cout << "SelectPointDepart (" << pInitial.getX() <<","<<pInitial.getY() <<")" << std::endl;
+    while( mwt.UpdateFeasiblePoints(c,points))
     {
-        //Si le point choisi n'a aucun point réalisable alors on le change
-        //Le troisième paramètre est le critère de choix
-        //1 pour un choix aléatoire 2 pour choisir le point avec le plus de points réalisables
-        //3 pour choisir le point avec le moins de points réalisables
-        pInitial=mwt.SelectPoint(points,c,1);
+
         std::vector<Point> feasible= mwt.FeasiblePoints(pInitial,c);
+        if(feasible.size()==0)
+        {
+            //Si le point choisi n'a aucun point réalisable alors on le change
+            //Le troisième paramètre est le critère de choix
+            //1 pour un choix aléatoire 2 pour choisir le point avec le plus de points réalisables
+            //3 pour choisir le point avec le moins de points réalisables
+            pInitial=mwt.SelectPoint(points,c,2);
+            std::cout << "SelectPoint (" << pInitial.getX() <<","<<pInitial.getY() <<")" << std::endl;
+            feasible= mwt.FeasiblePoints(pInitial,c);
+
+        }
+
+        setcolor(GREEN);
+        circle(pInitial.getX(),pInitial.getY(),3);
+
+        //Les point réalisables du point initial,ils seront colorier en bleu
+        for(int i=0;i<feasible.size();i++)
+        {
+            setcolor(BLUE);
+            circle(feasible[i].getX(),feasible[i].getY(),3);
+        }
+
+        Point pSelected= mwt.SelectPointProb(feasible,pInitial);
+        std::cout << "SelectPointProb (" << pSelected.getX() <<","<<pSelected.getY() <<")" << std::endl;
+        Brin* br = nullptr;
+        br=c.creeArete(pInitial,pSelected);
+        pInitial=pSelected;
+        trace(c);
 
     }
-
-    setcolor(GREEN);
-    circle(pInitial.getX(),pInitial.getY(),3);
-
-    //Les point réalisables du point initial,ils seront colorier en bleu
-    for(int i=0;i<feasible.size();i++)
-    {
-        setcolor(BLUE);
-        circle(feasible[i].getX(),feasible[i].getY(),3);
-    }
-
-    Point pSelected= mwt.SelectPointProb(feasible,pInitial);
-    cout << pSelected.getX() <<","<<pSelected.getY() << endl;
     getch();
     closegraph();
     return 0;
