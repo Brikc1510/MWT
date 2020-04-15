@@ -2,10 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 #include "Mwt.h"
+#include "Rng.h"
+#include "Polygone.h"
 #include <algorithm>
 #include <vector>
 #include <map>
 #include <iterator>
+#include "graphics.h"
 
 Mwt::Mwt()
 {
@@ -203,3 +206,47 @@ int Mwt::CalculNumberOfEdge(Carte c)
     return somme;
 }
 
+
+Carte Mwt::BuildSolutionSk(std::vector<Point> points)
+{
+    Rng rng;
+    //Création du graphe de voisinage relative
+    Carte c = rng.DrawRng(points);
+    //Séléction du point initial aléatoirement,il sera colorier en vert
+    Mwt mwt;
+    mwt.setPoints(points);
+    Point pInitial=mwt.SelectInitialPoint(points);
+    std::cout << "SelectPointDepart (" << pInitial.getX() <<","<<pInitial.getY() <<")" << std::endl;
+    Polygone p;
+    p=p.enveloppe(points);
+    std::cout << p.getNombreS() << std::endl;
+    int numberOfEdge= mwt.CalculNumberOfEdge(c);
+    //tester si S est triangulé avec la méthode FeasiblesPoints
+    //while(mwt.UpdateFeasiblePoints(c,points))
+    //tester la si S est triangulé avec la formule 3n-n'-3
+    while(3*points.size()-p.getNombreS()-3 != numberOfEdge)
+    {
+
+        std::vector<Point> feasible= mwt.FeasiblePoints(pInitial,c);
+        if(feasible.size()==0)
+        {
+            //Si le point choisi n'a aucun point réalisable alors on le change
+            //Le troisième paramètre est le critère de choix
+            //1 pour un choix aléatoire 2 pour choisir le point avec le plus de points réalisables
+            //3 pour choisir le point avec le moins de points réalisables
+            pInitial=mwt.SelectPoint(points,c,2);
+            std::cout << "SelectPoint (" << pInitial.getX() <<","<<pInitial.getY() <<")" << std::endl;
+            feasible= mwt.FeasiblePoints(pInitial,c);
+
+        }
+
+        Point pSelected= mwt.SelectPointProb(feasible,pInitial);
+        std::cout << "SelectPointProb (" << pSelected.getX() <<","<<pSelected.getY() <<")" << std::endl;
+        c.creeArete(pInitial,pSelected);
+        pInitial=pSelected;
+        //trace(c);
+        numberOfEdge=mwt.CalculNumberOfEdge(c);
+
+    }
+    return c;
+}

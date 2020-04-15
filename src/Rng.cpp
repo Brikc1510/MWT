@@ -24,8 +24,7 @@ Carte Rng::DrawRng(std::vector<Point> sommets)
     bool b;
     Carte c;
     for(int i =0;i<sommets.size();i++)
-    {   setcolor(RED);
-        circle(sommets[i].getX(),sommets[i].getY(),3);
+    {
         Brin* br = nullptr;
         for(int j =i+1;j<sommets.size();j++)
         {

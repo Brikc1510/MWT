@@ -22,6 +22,7 @@ class Mwt
         bool CompareDistance(double a,double b);
         bool UpdateFeasiblePoints(Carte c,std::vector<Point> p);
         int CalculNumberOfEdge(Carte c);
+        Carte BuildSolutionSk(std::vector<Point> points);
 
 
 
