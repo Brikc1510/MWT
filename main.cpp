@@ -3,6 +3,7 @@
 #include "Mwt.h"
 #include "vector"
 #include "Carte.h"
+#include "Polygone.h"
 #include "graphics.h"
 #include <bits/stdc++.h>
 
@@ -44,7 +45,7 @@ int main()
     points.push_back(p9);
 
 
-// int n=50;
+//    int n=50;
 //    for(int i(0);i<n;i++)
 //    {
 //        Point p((rand()% 600)+50,(rand()% 600)+50);
@@ -63,7 +64,14 @@ int main()
     mwt.setPoints(points);
     Point pInitial=mwt.SelectInitialPoint(points);
     std::cout << "SelectPointDepart (" << pInitial.getX() <<","<<pInitial.getY() <<")" << std::endl;
-    while( mwt.UpdateFeasiblePoints(c,points))
+    Polygone p;
+    p=p.enveloppe(points);
+    std::cout << p.getNombreS() << std::endl;
+    int numberOfEdge= mwt.CalculNumberOfEdge(c);
+    //tester si S est triangulé avec la méthode FeasiblesPoints
+    //while(mwt.UpdateFeasiblePoints(c,points))
+    //tester la si S est triangulé avec la formule 3n-n'-3
+    while(3*points.size()-p.getNombreS()-3 != numberOfEdge)
     {
 
         std::vector<Point> feasible= mwt.FeasiblePoints(pInitial,c);
@@ -91,10 +99,10 @@ int main()
 
         Point pSelected= mwt.SelectPointProb(feasible,pInitial);
         std::cout << "SelectPointProb (" << pSelected.getX() <<","<<pSelected.getY() <<")" << std::endl;
-        Brin* br = nullptr;
-        br=c.creeArete(pInitial,pSelected);
+        c.creeArete(pInitial,pSelected);
         pInitial=pSelected;
         trace(c);
+        numberOfEdge=mwt.CalculNumberOfEdge(c);
 
     }
     getch();

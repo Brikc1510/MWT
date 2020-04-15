@@ -21,6 +21,7 @@ class Mwt
         Point SelectPointProb(std::vector<Point> p,Point i);
         bool CompareDistance(double a,double b);
         bool UpdateFeasiblePoints(Carte c,std::vector<Point> p);
+        int CalculNumberOfEdge(Carte c);
 
 
 

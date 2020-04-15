@@ -193,3 +193,13 @@ bool Mwt::UpdateFeasiblePoints(Carte c,std::vector<Point> p)
         return false;
 }
 
+int Mwt::CalculNumberOfEdge(Carte c)
+{
+    int somme=0;
+    for(int i=0;i<c.getBrins().size();i+=2)
+    {
+        somme++;
+    }
+    return somme;
+}
+

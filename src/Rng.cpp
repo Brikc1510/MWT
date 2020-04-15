@@ -49,7 +49,7 @@ Carte Rng::DrawRng(std::vector<Point> sommets)
                 }
                 else
                 {
-                    br=c.creeArete(br,sommets[j]);
+                    c.creeArete(br,sommets[j]);
                 }
 
                //line(sommets[i].getX(),sommets[i].getY(),sommets[j].getX(),sommets[j].getY());

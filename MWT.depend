@@ -26,12 +26,13 @@
 
 1570054868 c:\users\ahmed\codeblocksprojects\mwt\include\graphics.h
 
-1586744479 source:c:\users\ahmed\codeblocksprojects\mwt\main.cpp
+1586990070 source:c:\users\ahmed\codeblocksprojects\mwt\main.cpp
 	<iostream>
 	"Rng.h"
 	"Mwt.h"
 	"vector"
 	"Carte.h"
+	"Polygone.h"
 	"graphics.h"
 	<bits/stdc++.h>
 
@@ -41,7 +42,7 @@
 	<Point.h>
 	<math.h>
 
-1586227348 source:c:\users\ahmed\codeblocksprojects\mwt\src\rng.cpp
+1586748817 source:c:\users\ahmed\codeblocksprojects\mwt\src\rng.cpp
 	<iostream>
 	"Rng.h"
 	"Carte.h"
@@ -56,7 +57,7 @@
 	"Point.h"
 	<vector>
 
-1586743956 source:c:\users\ahmed\codeblocksprojects\mwt\src\mwt.cpp
+1586989283 source:c:\users\ahmed\codeblocksprojects\mwt\src\mwt.cpp
 	<iostream>
 	<stdlib.h>
 	<time.h>
@@ -66,9 +67,17 @@
 	<map>
 	<iterator>
 
-1586741233 c:\users\ahmed\codeblocksprojects\mwt\include\mwt.h
+1586988871 c:\users\ahmed\codeblocksprojects\mwt\include\mwt.h
 	"Point.h"
 	<Carte.h>
 	<vector>
 	<math.h>
+
+1586990115 source:c:\users\ahmed\codeblocksprojects\mwt\src\polygone.cpp
+	"Polygone.h"
+
+1586990069 c:\users\ahmed\codeblocksprojects\mwt\include\polygone.h
+	"Point.h"
+	"Sommet.h"
+	<vector>
 
