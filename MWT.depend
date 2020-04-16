@@ -26,13 +26,12 @@
 
 1570054868 c:\users\ahmed\codeblocksprojects\mwt\include\graphics.h
 
-1586991241 source:c:\users\ahmed\codeblocksprojects\mwt\main.cpp
+1587005637 source:c:\users\ahmed\codeblocksprojects\mwt\main.cpp
 	<iostream>
-	"Rng.h"
 	"Mwt.h"
 	"vector"
 	"Carte.h"
-	"Polygone.h"
+	<windows.h>
 	"graphics.h"
 	<bits/stdc++.h>
 
@@ -52,12 +51,12 @@
 	"Carte.h"
 	<iostream>
 
-1571213169 c:\users\ahmed\codeblocksprojects\mwt\include\carte.h
+1586996001 c:\users\ahmed\codeblocksprojects\mwt\include\carte.h
 	"Brin.h"
 	"Point.h"
 	<vector>
 
-1586990988 source:c:\users\ahmed\codeblocksprojects\mwt\src\mwt.cpp
+1587005679 source:c:\users\ahmed\codeblocksprojects\mwt\src\mwt.cpp
 	<iostream>
 	<stdlib.h>
 	<time.h>
@@ -70,7 +69,7 @@
 	<iterator>
 	"graphics.h"
 
-1586990746 c:\users\ahmed\codeblocksprojects\mwt\include\mwt.h
+1587005631 c:\users\ahmed\codeblocksprojects\mwt\include\mwt.h
 	"Point.h"
 	<Carte.h>
 	<vector>

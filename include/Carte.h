@@ -7,6 +7,8 @@ class Carte
 {
 public:
     Carte();
+    //La somme des longueurs des cotes de la carte
+    double m_value=0;
     Brin* creeBrin(Brin* b, Brin* a);
     Brin* creeBrin(const Point& p, Brin* a);
     Brin* creeArete(Brin* a,Brin* b);

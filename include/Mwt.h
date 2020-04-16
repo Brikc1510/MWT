@@ -24,12 +24,24 @@ class Mwt
         int CalculNumberOfEdge(Carte c);
         Carte BuildSolutionSk(std::vector<Point> points);
 
+        double EvaluateSolution(Carte c);
+        std::vector<Carte> getCartes() const;
+        void setCarte(Carte c);
 
+        void Initialize(std::vector<Point> points,int c,int k,double t);
+        Carte getAllEdge();
+        void setEdge(Point p,Point p1);
+        void setEdge(Carte c);
+        Carte getRng();
+        void setRng(Carte c);
+        int m_K,m_C;
 
     protected:
 
     private:
-
+        Carte m_Rng;
+        Carte m_AllEdge;
+        std::vector<Carte> cartes;
         std::vector<Point> points;
 };
 

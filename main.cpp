@@ -2,6 +2,7 @@
 #include "Mwt.h"
 #include "vector"
 #include "Carte.h"
+#include <windows.h>
 #include "graphics.h"
 #include <bits/stdc++.h>
 
@@ -54,8 +55,29 @@ int main()
     opengraphsize(1200 ,1200);
 
     Mwt mwt;
-    Carte c=mwt.BuildSolutionSk(points);
-    trace(c);
+    mwt.Initialize(points,5,20,0.5);
+    Carte c;
+    srand(time(NULL));
+    for(int j=0;j<mwt.m_K;j++)
+    {
+
+       c=mwt.BuildSolutionSk(points);
+        mwt.EvaluateSolution(c);
+    }
+
+    for(int i=0;i<mwt.getCartes().size();i++)
+    {
+
+        c = mwt.getCartes()[i];
+        cout << c.m_value << endl;
+        trace(c);
+        Sleep(2000);
+        cleardevice();
+
+
+    }
+
+
     getch();
     closegraph();
     return 0;
