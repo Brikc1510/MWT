@@ -91,7 +91,7 @@ void Mwt::Initialize(vector<Point> points,int c,int k,double t,double p)
             setEdge(points[i],feasible[j]);
         }
     }
-    //Instancier toutes les aretes avec un taux de pheromone
+    //Instancier toutes les aretes avec un taux de pheromone intial
     vector<Brin*> brins=getAllEdge().getBrins();
     for(int j=0;j<brins.size();j++)
     {
