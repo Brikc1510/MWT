@@ -374,7 +374,7 @@ void Mwt::setBestSolution(Carte c)
 {
     m_BestSolution=c;
 }
-//Sauvgarder la meilleur solution
+//Sauvgarder la meilleure solution
 void Mwt::SaveBestSolutionSoFar()
 {
 
