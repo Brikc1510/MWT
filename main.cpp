@@ -24,7 +24,7 @@ void trace(Carte c)
 
     }
 }
-//Ordonner les points selon leurs abscisses
+//Cette fonction permet Ordonner les points selon leurs abscisses
 bool comparePoint(Point p1, Point p2)
 {
     return ((p1.getX() < p2.getX()) || ((p1.getX()== p2.getX()) && (p1.getY()<p2.getY())));
