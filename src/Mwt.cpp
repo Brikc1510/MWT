@@ -105,7 +105,7 @@ Point Mwt::SelectInitialPoint(vector<Point> p)
     return p[r];
 }
 
-//Retourner les points réalisables pour un certain point
+//Retourner les points réalisables pour un certain point choisi
 vector<Point> Mwt::FeasiblePoints(Point i,Carte c)
 {
     vector<Point> feasible;
