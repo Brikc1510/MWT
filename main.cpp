@@ -59,7 +59,7 @@ int main()
 
     Mwt mwt;
     //Instanciation des différents parametres de l'algorithme
-    //@param L'ensemble des points de S, Nombres des cycles, Nombres des fourmi, Le taux de pheromone initial, Le paramatre p (pour l'évaporation)
+    //@param L'ensemble des points de S, Nombres des cycles, Nombres des fourmis, Le taux de pheromone initial, Le paramatre p (pour l'évaporation)
     mwt.Initialize(points,30,5,0.2,0.1);
     Carte c;
     srand(time(NULL));
@@ -82,7 +82,7 @@ int main()
             mwt.EvaluateSolution(c);
         }
 
-        //Affichage des differentes k-solutions construites par les fourmis
+        //cette fonction permet d'Afficher des differentes k-solutions construites par les fourmis
         for(int i=0;i<mwt.getSolutions().size();i++)
         {
             c = mwt.getSolutions()[i];
@@ -100,7 +100,7 @@ int main()
     }
 
 
-    //Recuperer la meilleur solution
+    //Recuperer la meilleure solution
     Carte carte=mwt.getBestSolution();
     //Garder l'affichage de la meilleur triangulation ainsi que la somme des longueurs des aretes de cette triangulation
     trace(carte);
