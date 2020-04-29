@@ -205,7 +205,7 @@ double Mwt::GetEdgeValue(Point p,Point p1)
         }
     }
 }
-//Choisir le point avec le quel on va créer une nouvel arete de la triangulation
+//Choisir le point avec le quel on va créer une nouvelle arete de la triangulation
 Point Mwt::SelectPointProb(vector<Point> p,Point i)
 {
     map<double,const Point> pijAll;
