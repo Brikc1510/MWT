@@ -13,7 +13,7 @@ void segement(const Point& p1, const Point& p2)
 {
     line(p1.getX(),p1.getY(),p2.getX(),p2.getY());
 }
-//Permet de tracer tous la carte(triangulation)
+//Cette Permet de tracer tous la carte(triangulation)
 void trace(Carte c)
 {
     for(int i(0);i<c.getBrins().size();i+=2)
