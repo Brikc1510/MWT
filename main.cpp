@@ -59,7 +59,7 @@ int main()
 
     Mwt mwt;
     //Instanciation des différents parametres de l'algorithme
-    //@param L'ensemble des points de S, Nombre de cycle, Nombre de fourmi, Le taux de pheromone initial, Le paramatre p (pour l'évaporation)
+    //@param L'ensemble des points de S, Nombres des cycles, Nombre de fourmi, Le taux de pheromone initial, Le paramatre p (pour l'évaporation)
     mwt.Initialize(points,30,5,0.2,0.1);
     Carte c;
     srand(time(NULL));
