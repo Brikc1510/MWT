@@ -365,7 +365,7 @@ double Mwt::EvaluateSolution(Carte c)
     setSolution(c);
     return somme;
 }
-//Récupérer la meilleur solution
+//Récupérer la meilleure solution
 Carte Mwt::getBestSolution()
 {
     return m_BestSolution;
