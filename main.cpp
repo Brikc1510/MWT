@@ -8,7 +8,7 @@
 
 using namespace std;
 
-//Permet de tracer une arete
+//Fonction Permet de tracer une arete
 void segement(const Point& p1, const Point& p2)
 {
     line(p1.getX(),p1.getY(),p2.getX(),p2.getY());
