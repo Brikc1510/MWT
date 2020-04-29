@@ -30,13 +30,13 @@ void Mwt::setPoints(vector<Point> p)
 {
     points=p;
 }
-//Calculer la distance entre deux point
+//fonction qui Calcule la distance entre deux point
 double Mwt::Distance(Point p,Point p1)
 {
     double distance = sqrt((p1.getX()-p.getX())*(p1.getX()-p.getX())+(p1.getY()-p.getY())*((p1.getY()-p.getY())));
     return distance;
 }
-//Fonction utilisé pour déterminer si un point est agauche/adroite/alignee par rapport a un deux autres point
+//Fonction utilisé pour déterminer si un point est agauche/adroite/alignee par rapport a un deux autres point (intersection)
 int Mwt::aGauche(Point p1, Point p2, Point newPt)
 {
     if((((p2.getX()-p1.getX())*(newPt.getY()-p1.getY()))-((p2.getY()-p1.getY())*(newPt.getX()-p1.getX())))>0)
