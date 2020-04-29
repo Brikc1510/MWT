@@ -79,7 +79,7 @@ void Mwt::Initialize(vector<Point> points,int c,int k,double t,double p)
     m_C=c;
     m_P=p;
     Rng rng;
-    //Création du graphe de voisinage relative
+    //Création du graphe de voisinage relative RNG
     setRng(rng.DrawRng(points));
     setEdge(rng.DrawRng(points));
     setPoints(points);
