@@ -15,7 +15,7 @@ Polygone::Polygone(const Point& p)
 Polygone::~Polygone()
 {
 }
-//Retourne l'envloppe convexe d'un ensemble de point S
+//la fonction qui retourne l'envloppe convexe d'un ensemble de point S
 Polygone Polygone::enveloppe(std::vector <Point> T)
 {
     Polygone P(T[0]);
