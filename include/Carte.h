@@ -2,13 +2,14 @@
 #define CARTE_H_INCLUDED
 #include "Brin.h"
 #include "Point.h"
+#include <limits>
 #include <vector>
 class Carte
 {
 public:
     Carte();
     //La somme des longueurs des cotes de la carte
-    double m_value=0;
+    double m_value=std::numeric_limits<double>::max();
     Brin* creeBrin(Brin* b, Brin* a);
     Brin* creeBrin(const Point& p, Brin* a);
     Brin* creeArete(Brin* a,Brin* b);

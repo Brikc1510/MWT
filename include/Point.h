@@ -10,6 +10,8 @@ class Point
         Point(const Point& p);
         int getX() const;
         int getY() const;
+        bool operator==(const Point p);
+
 
     private:
         int Member;

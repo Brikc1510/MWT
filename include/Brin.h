@@ -11,12 +11,12 @@ public:
     Brin* getSigmaM() const;
     Sommet* getSommet() const;
     int getNum() const;
-    int getMar() const;
+    double getMar() const;
     void setSigma(Brin* b);
     void setAlpha(Brin* b);
     void setSigmaM(Brin* b);
     void setNum(int i);
-    void setMar(int i);
+    void setMar(double i);
 
 private:
     Brin* m_alpha;
@@ -24,7 +24,7 @@ private:
     Brin* m_sigmaM;
     Sommet* m_s;
     int m_num;
-    int m_mar;
+    double m_mar;
 };
 
 

@@ -20,4 +20,8 @@ int Point::getY() const
     return m_y;
 }
 
+bool Point::operator==(const Point p)
+{
+    return getX() == p.getX() && getY()==p.getY();
+}
 

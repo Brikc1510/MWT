@@ -40,11 +40,11 @@ void Brin::setNum(int i)
 {
     m_num=i;
 }
-int Brin::getMar() const
+double Brin::getMar() const
 {
     return m_mar;
 }
-void Brin::setMar(int i)
+void Brin::setMar(double i)
 {
     m_mar=i;
 }
