@@ -240,7 +240,7 @@ Point Mwt::SelectPointProb(vector<Point> p,Point i)
     }
     cout << "----------"<< endl;
 
-    //On tire un nombre aléatoire
+    //On tire un nombre aléatoire qui va permetre de choisir le point suivant
     double r = (double) rand()/RAND_MAX;
     cout << "random "<< r << endl;
 
